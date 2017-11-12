@@ -35,6 +35,7 @@
 
   <xacro:macro name="create_base" params="diffdrive_update_rate:=40 wheel_separation wheel_radius:=0.036 wheel_width:=0.024 wheel_torque:=1.0 wheel_accel:=1.8 mass_kg:=3.5 base_diameter *mesh">
     <xacro:include filename="$(find ca_description)/urdf/create_base_gazebo.urdf.xacro" />
+    <xacro:include filename="$(find ca_description)/urdf/sensors/hokuyo.urdf.xacro" />
 
     <link name="base_footprint">
     <visual>
@@ -154,6 +155,8 @@
     <xacro:create_wheel prefix="left" y_offset="${wheel_separation / 2}" wheel_radius="${wheel_radius}" wheel_width="${wheel_width}"/>
     <xacro:create_wheel prefix="right" y_offset="${wheel_separation / -2}" wheel_radius="${wheel_radius}" wheel_width="${wheel_width}"/>
 
+    <xacro:sensor_hokuyo parent="base_link" />
+
     <!--<link name="rear_wheel_link">
     <inertial>
       <origin xyz="0 0 0"/>
@@ -232,5 +235,7 @@
     <xacro:sim_create_wall_sensor/>
     <xacro:sim_create_cliff_sensors/>
     <xacro:sim_imu/>
+    <xacro:sim_create_hokuyo_sensor update_rate="20" min_angle="-130" max_angle="130" ray_count="180"/>
+
   </xacro:macro>
 </robot>
