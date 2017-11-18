@@ -18,6 +18,8 @@
   <run_depend>ca_tools</run_depend>
   <run_depend>ca_msgs</run_depend>
   <run_depend>ca_description</run_depend>
+	<!-- the following is added by Mohamed Abdelkader Zahana -->
+  <run_depend>ca_launchers</run_depend>
 
   <export>
     <metapackage/>
