@@ -101,7 +101,7 @@ find_package(catkin REQUIRED)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES ca_launchers
-#  CATKIN_DEPENDS other_catkin_pkg
+#  CATKIN_DEPENDS turtlebot_teleop
 #  DEPENDS system_lib
 )
 
